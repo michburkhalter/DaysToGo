@@ -15,7 +15,7 @@
          "type":"image/png"
       },
       {
-          "src":"images/icon144_rounded.png",
+          "src":"images/icon144_maskable.png",
           "sizes": "144x144",
           "type": "image/png",
           "purpose": "any"
