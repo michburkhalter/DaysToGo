@@ -11,10 +11,10 @@ const APP_STATIC_RESOURCES = [
   "/date_calculation.js",
   "/styles.css",
   "/images/favicon.ico",
-  "/icon512_rounded.png",
-  "/icon144_rounded.png",
-  "/icon512_maskable.png",
-  "/icon144_maskable.png",
+  "/images/icon512_rounded.png",
+  "/images/icon144_rounded.png",
+  "/images/icon512_maskable.png",
+  "/images/icon144_maskable.png",
   "/manifest.json",
 
 ];
