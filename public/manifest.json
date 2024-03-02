@@ -19,7 +19,7 @@
          "sizes":"144x144",
          "src":"/images/icon144_rounded.png",
          "type":"image/png"
-      },
+      }
    ],
    "orientation":"any",
    "display":"standalone",
