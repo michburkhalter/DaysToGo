@@ -112,5 +112,25 @@
         navigator.serviceWorker.register("sw.js");
       }
     </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"></script>
+  
+    <script>
+          const firebaseConfig = {
+            apiKey: "AIzaSyDVlKbSXUs0icDA8y8ALnf369s6K6aRv40",
+            authDomain: "daystogo-6c643.firebaseapp.com",
+            projectId: "daystogo-6c643",
+            storageBucket: "daystogo-6c643.appspot.com",
+            messagingSenderId: "324542282410",
+            appId: "1:324542282410:web:b1a379658b57dd02246ed3",
+            measurementId: "G-MS47582DX4"
+          };
+        
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          const messaging = firebase.messaging();
+        </script>
+        <script src="/index.js"></script>
   </body>
 </html>
