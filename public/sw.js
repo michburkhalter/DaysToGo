@@ -14,6 +14,7 @@ const APP_STATIC_RESOURCES = [
   "/icon512_rounded.png",
   "/icon144_rounded.png",
   "/icon512_maskable.png",
+  "/icon144_maskable.png",
   "/manifest.json",
 
 ];
