@@ -1,5 +1,5 @@
 // The version of the cache.
-const VERSION = "v2";
+const VERSION = "v3";
 
 // The name of the cache
 const CACHE_NAME = `days-to-go-${VERSION}`;
@@ -11,60 +11,33 @@ const APP_STATIC_RESOURCES = [
   "/date_calculation.js",
   "/styles.css",
   "/images/favicon.ico",
-  "/icon512_rounded.png",
-  "/icon144_rounded.png",
-  "/icon512_maskable.png",
+  "/images/icon512_rounded.png",
+  "/images/icon144_rounded.png",
+  "/images/icon512_maskable.png",
+  "/images/icon144_maskable.png",
   "/manifest.json",
 
 ];
 
-// On install, cache the static resources
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    (async () => {
-      const cache = await caches.open(CACHE_NAME);
-      cache.addAll(APP_STATIC_RESOURCES);
-    })()
-  );
-});
+// Establish a cache name
+const cacheName = 'MyFancyCacheName_v1';
 
-// delete old caches on activate
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    (async () => {
-      const names = await caches.keys();
-      await Promise.all(
-        names.map((name) => {
-          if (name !== CACHE_NAME) {
-            return caches.delete(name);
-          }
-        })
-      );
-      await clients.claim();
-    })()
-  );
-});
+self.addEventListener('fetch', (event) => {
+  // Check if this is a navigation request
+  if (event.request.mode === 'navigate') {
+    // Open the cache
+    event.respondWith(caches.open(cacheName).then((cache) => {
+      // Go to the network first
+      return fetch(event.request.url).then((fetchedResponse) => {
+        cache.put(event.request, fetchedResponse.clone());
 
-// On fetch, intercept server requests
-// and respond with cached responses instead of going to network
-self.addEventListener("fetch", (event) => {
-  // As a single page app, direct app to always go to cached home page.
-  if (event.request.mode === "navigate") {
-    event.respondWith(caches.match("/"));
+        return fetchedResponse;
+      }).catch(() => {
+        // If the network is unavailable, get
+        return cache.match(event.request.url);
+      });
+    }));
+  } else {
     return;
   }
-
-  // For all other requests, go to the cache first, and then the network.
-  event.respondWith(
-    (async () => {
-      const cache = await caches.open(CACHE_NAME);
-      const cachedResponse = await cache.match(event.request);
-      if (cachedResponse) {
-        // Return the cached response if it's available.
-        return cachedResponse;
-      }
-      // If resource isn't in the cache, return a 404.
-      return new Response(null, { status: 404 });
-    })()
-  );
 });
