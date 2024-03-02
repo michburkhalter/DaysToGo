@@ -1,5 +1,5 @@
 // The version of the cache.
-const VERSION = "v1";
+const VERSION = "v2";
 
 // The name of the cache
 const CACHE_NAME = `days-to-go-${VERSION}`;
@@ -11,8 +11,10 @@ const APP_STATIC_RESOURCES = [
   "/date_calculation.js",
   "/styles.css",
   "/images/favicon.ico",
-  "icon512_rounded.png",
-  "icon512_maskable.png",
+  "/icon512_rounded.png",
+  "/icon144_rounded.png",
+  "/icon512_maskable.png",
+  "/manifest.json",
 
 ];
 
