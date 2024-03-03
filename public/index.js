@@ -50,4 +50,5 @@ messaging.getToken({ vapidKey: 'BFljidfSH8dA-S8ad9nH8mbZuJErjAp6zbQhb9soCGyzF6TL
 messaging.onMessage(payload => {
   console.log('Message rreceived. ', payload);
   // ...
+  showNotification()
 });
