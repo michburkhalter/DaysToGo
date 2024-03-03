@@ -26,6 +26,8 @@ messaging.onBackgroundMessage(payload => {
       icon: '/images/icon144_maskable.png'
     };
   
+
+    console.log('onBackgorundMessage')
     self.registration.showNotification(notificationTitle,
       notificationOptions);
   });
