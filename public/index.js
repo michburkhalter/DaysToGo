@@ -9,9 +9,10 @@ if (navigator.serviceWorker) {
 // Notification support
 
 function showNotification() {
+  console.log('showNotification')
   let notificationOptions = {
     body: 'Some Notification information',
-    icon: '/thumb.png'
+    icon: '/images/icon144_maskable.png'
   }
   let notif = new Notification('My New Notification', notificationOptions);
 
@@ -47,6 +48,6 @@ messaging.getToken({ vapidKey: 'BFljidfSH8dA-S8ad9nH8mbZuJErjAp6zbQhb9soCGyzF6TL
 });
 
 messaging.onMessage(payload => {
-  console.log('Message received. ', payload);
+  console.log('Message rreceived. ', payload);
   // ...
 });
