@@ -16,6 +16,8 @@ const APP_STATIC_RESOURCES = [
   "/images/icon512_maskable.png",
   "/images/icon144_maskable.png",
   "/manifest.json",
+  "/firebase-messaging-sw.js",
+  "/index.js",
 
 ];
 
