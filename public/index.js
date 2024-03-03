@@ -30,7 +30,7 @@ if(window.Notification) {
   }
 }
 
-messaging.getToken({ vapidKey: 'BDn5L5Z4sw9cXI-zHZBqexRDSyw2afRVM03ph9er3LNar-_tMiy5Q7xSaWnch6IrNDMwnxYC3fek1YW2qRHPhtA' }).then((currentToken) => {
+messaging.getToken({ vapidKey: 'BFljidfSH8dA-S8ad9nH8mbZuJErjAp6zbQhb9soCGyzF6TL4IVjwCRbNQXq2wsEMP1tWho4xDRE-m5z_UtqcqE' }).then((currentToken) => {
   if (currentToken) {
     // Send the token to your server and update the UI if necessary
     // ...
