@@ -20,14 +20,14 @@ const messaging = firebase.messaging()
 
 messaging.onBackgroundMessage(payload => {
     // Customize notification here
-    const notificationTitle = 'Background Message Title';
-    const notificationOptions = {
-      body: 'Background Message body.',
-      icon: '/images/icon144_maskable.png'
-    };
+  // const notificationTitle = 'Background Message Title';
+  // const notificationOptions = {
+  //   body: 'Background Message body.',
+  //   icon: '/images/icon144_maskable.png'
+  // };
   
 
     console.log('onBackgorundMessage')
-    self.registration.showNotification(notificationTitle,
-      notificationOptions);
+  //  self.registration.showNotification(notificationTitle,
+  //    notificationOptions);
   });
